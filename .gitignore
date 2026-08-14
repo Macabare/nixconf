@@ -1,0 +1,22 @@
+# Nix build results
+result
+result-*
+
+# Secrets / credentials
+.env
+.env.*
+*.key
+*.pem
+*.secret
+secrets/
+
+# Runtime state
+state.json
+
+# Editor
+.vscode/
+.vscode-oss/
+
+# OS junk
+.DS_Store
+Thumbs.db

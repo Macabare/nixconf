@@ -1,0 +1,61 @@
+{
+  "system": {
+    "editor": "codium"
+  },
+  "theme": {
+    "name": "catppuccin-mocha",
+    "mode": "preset",
+    "scheme": "dark"
+  },
+  "wallpaper": {
+    "current": "",
+    "dynamic": true,
+    "favorites": []
+  },
+  "nightLight": {
+    "enabled": false,
+    "intensity": 0.5
+  },
+  "bar": {
+    "autoHide": true,
+    "height": 30
+  },
+  "opacity": {
+    "background": 0.9
+  },
+  "geometry": {
+    "radiusSmall": 5,
+    "radius": 10,
+    "radiusLarge": 15,
+    "spacing": 8,
+    "padding": 6
+  },
+  "typography": {
+    "font": "JetBrainsMono Nerd Font",
+    "sizeSmall": 12,
+    "sizeNormal": 14,
+    "sizeLarge": 16,
+    "iconSmall": 18,
+    "icon": 22,
+    "iconLarge": 28
+  },
+  "animations": {
+    "short": 100,
+    "normal": 200,
+    "long": 400,
+    "screenshot": true
+  },
+  "notifications": {
+    "width": 350,
+    "imageSize": 40,
+    "timeout": 5000,
+    "spacing": 10
+  },
+  "idle": {
+    "caffeine": false,
+    "dpmsEnabled": true,
+    "mediaInhibit": true,
+    "lockTimeout": 600,
+    "dpmsTimeout": 300
+  }
+}
