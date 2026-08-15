@@ -1,16 +1,16 @@
+{ ... }:
+
 {
   imports = [
-    ./hyprland.nix
-    ./quickshell.nix
-    ./xdg.nix
-    
-    ./vicinae.nix
-    ./vscodium.nix
-    
-    ./ghostty.nix
-    ./shell.nix
-    
-    ./appearance.nix
-    ./wallpaper.nix
+    ./terminal
   ];
+  
+  home = {
+    username = "alex";
+    homeDirectory = "/home/alex";
+    stateVersion = "26.05";
+  };
+
+  programs.home-manager.enable = true;
+
 }

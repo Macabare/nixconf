@@ -1,0 +1,6 @@
+{
+  "alex@glushkov" = [
+    ../.
+    ./glushkov
+  ];
+}
