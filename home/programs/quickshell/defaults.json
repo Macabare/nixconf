@@ -49,7 +49,8 @@
     "width": 350,
     "imageSize": 40,
     "timeout": 5000,
-    "spacing": 10
+    "spacing": 10,
+    "sound": "/.local/share/sounds/freedesktop/stereo/bell.oga"
   },
   "idle": {
     "caffeine": false,

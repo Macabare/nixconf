@@ -11,10 +11,11 @@
     git
     wget
     curl
-    btop
     quickshell
     vicinae
     xdg-utils
+
+    sound-theme-freedesktop
   ];
 
   programs.zsh.enable = true;

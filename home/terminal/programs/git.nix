@@ -14,6 +14,7 @@
       "*~"
       "*.swp"
       "*result*"
+      ".env"
       ".direnv"
       ".worktree"
       "node_modules"
@@ -32,7 +33,7 @@
         bd = "branch --delete";
         bdd = "branch -D";
         c = "commit";
-        ca = "commit --amend";
+        ca = "commit --amend --no-edit";
         cm = "commit --message";
         co = "checkout";
         cb = "checkout -b";

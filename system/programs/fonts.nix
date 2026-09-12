@@ -8,6 +8,8 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
+
+    inter
   ];
 
   fonts.enableDefaultPackages = false;

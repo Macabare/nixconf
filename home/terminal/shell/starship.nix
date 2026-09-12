@@ -13,6 +13,10 @@
         "$username"
         "$hostname"
         "$directory"
+        "$bun"
+        "$nodejs"
+        "$golang"
+        "$dotnet"
         "$git_branch"
         "$git_status"
         "$line_break"
@@ -36,6 +40,26 @@
         truncate_to_repo = true;
         format = " in [$path]($style)";
         style = "bold blue";
+      };
+
+      bun = {
+        format = " via bun:[$version]($style)";
+        version_format = "$major.$minor";
+      };
+
+      nodejs = {
+        format = " via node:[$version]($style)";
+        version_format = "$major.$minor";
+      };
+
+      golang = {
+        format = " via go:[$version]($style)";
+        version_format = "$major.$minor";
+      };
+
+      dotnet = {
+        format = " via dotnet:[$version <$tfm>]($style)";
+        version_format = "$major.$minor";
       };
 
       git_branch = {

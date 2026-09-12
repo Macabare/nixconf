@@ -43,6 +43,12 @@ Singleton {
         }
     }
 
+    function playNotificationSound() {
+        console.log("[Notif] Sound:", Config.notifSound);
+
+        Quickshell.execDetached(["pw-play", Quickshell.env("HOME") + Config.notifSound]);
+    }
+
     // ========================================================================
     // NOTIFICATION LISTS
     // ========================================================================
@@ -90,6 +96,7 @@ Singleton {
                 // Only start the lifecycle (timer) if not in DND
                 if (showPopup) {
                     wrapper.startLifecycle();
+                    root.playNotificationSound();
                 }
 
                 console.log("[Notif] Wrapper created. Total:", root.notifications.length, "Popups:", root.popups.length, "DND:", root.dndEnabled);

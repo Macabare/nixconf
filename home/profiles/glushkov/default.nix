@@ -6,6 +6,8 @@
     ../../programs/wayland
     ../../programs/editors/vscodium
 
+    ../../programs/office
+    ../../programs/media
     ../../programs/dev/go.nix
 
     ../../services/wallpapers

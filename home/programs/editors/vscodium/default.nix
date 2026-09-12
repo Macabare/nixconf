@@ -5,10 +5,11 @@
     enable = true;
 
     profiles.default = {
-      
+
       extensions = with pkgs.vscode-extensions; [
         esbenp.prettier-vscode
         golang.go
+        jnoortheen.nix-ide
 
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
@@ -17,7 +18,7 @@
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Mocha";
         "workbench.iconTheme" = "catppuccin-frappe";
-        
+
         "breadcrumbs.icons" = false;
         "breadcrumbs.showArrays" = false;
         "breadcrumbs.showBooleans" = false;
@@ -133,13 +134,20 @@
         "[go]" = {
           "editor.defaultFormatter" = "golang.go";
         };
-        
+
         "[qml]" = {
           "editor.defaultFormatter" = "theqtcompany.qt-qml";
         };
 
         "qt-qml.qmlls.customExePath" = "${pkgs.qt6.qtdeclarative}/bin/qmlls";
-        
+
+        "[nix]" = {
+          "editor.defaultFormatter" = "jnoortheen.nix-ide";
+          "editor.formatOnSave" = true;
+        };
+
+        "nix.serverPath" = "${pkgs.nixd}/bin/nixd";
+        "nix.formatterPath" = "${pkgs.nixfmt}/bin/nixfmt";
       };
     };
   };
