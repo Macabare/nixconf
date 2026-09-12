@@ -14,8 +14,51 @@ Item {
 
     signal closeWindow
 
+    property bool ethernetConnected: false
+
     Layout.fillWidth: true
     implicitHeight: main.implicitHeight
+
+    Process {
+        id: networkTypeCheck
+        command: ["nmcli", "-t", "-f", "TYPE,STATE", "device"]
+
+        stdout: SplitParser {
+            onRead: data => {
+                const line = data.trim();
+                if (!line)
+                    return;
+
+                const parts = line.split(":");
+                if (parts.length < 2)
+                    return;
+
+                const type = parts[0];
+                const state = parts[1];
+
+                if ((type === "ethernet" || type === "802-3-ethernet") && state === "connected")
+                    root.ethernetConnected = true;
+            }
+        }
+
+        onExited: {
+            if (!running) {
+                // Re-check state on the next refresh.
+                networkTypeCheck.running = true;
+            }
+        }
+    }
+
+    Timer {
+        interval: 3000
+        repeat: true
+        running: true
+        triggeredOnStart: true
+        onTriggered: {
+            root.ethernetConnected = false;
+            networkTypeCheck.running = true;
+        }
+    }
 
     ColumnLayout {
         id: main
@@ -168,13 +211,16 @@ Item {
 
             // WI-FI BUTTON
             QuickSettingsTile {
-                icon: NetworkService.systemIcon
-                label: "Wi-Fi"
+                icon: root.ethernetConnected ? "󰈀" : NetworkService.systemIcon
+                label: root.ethernetConnected ? "Network" : "Wi-Fi"
                 subLabel: NetworkService.statusText
                 property string ssid: NetworkService.accessPoints.find(ap => ap.active)?.ssid || "Connected"
-                active: NetworkService.wifiEnabled
+                active: root.ethernetConnected || NetworkService.wifiEnabled
                 hasDetails: true
-                onToggled: NetworkService.toggleWifi()
+                onToggled: {
+                    if (!root.ethernetConnected)
+                        NetworkService.toggleWifi();
+                }
                 onOpenDetails: pageStack.currentIndex = 1
             }
 

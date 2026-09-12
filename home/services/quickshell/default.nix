@@ -22,7 +22,7 @@ in
 
     Service = {
       Environment = [
-        "PATH=/run/wrappers/bin:${lib.makeBinPath dependencies}"
+        "PATH=/run/wrappers/bin:/run/current-system/sw/bin:${lib.makeBinPath dependencies}"
         "QML2_IMPORT_PATH=${qmlImportPath}"
         "QSG_RHI_BACKEND=vulkan"
       ];

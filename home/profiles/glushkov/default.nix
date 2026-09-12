@@ -1,11 +1,12 @@
 {
   imports = [
 
-    # programs
     ../../programs
     # ../../programs/games
     ../../programs/wayland
     ../../programs/editors/vscodium
+
+    ../../programs/dev/go.nix
 
     ../../services/wallpapers
     ../../services/quickshell
